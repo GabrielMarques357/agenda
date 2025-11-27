@@ -29,7 +29,7 @@ export default function CreateCliente() {
         const response = await createUser(user)
         
         if(response.status === 201) {
-            navigate('/users')
+            navigate('/clientes')
         } else {
             console.log(response)
         }

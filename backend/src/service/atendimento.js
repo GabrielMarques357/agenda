@@ -31,7 +31,7 @@ class ServiceAtendimento {
             throw new Error("favor preencher todos os campos")
         }
 
-        //const senhaCrip = await bcrypt.hash(String(senha), SALT)
+        
 
         await User.create({
             dia,

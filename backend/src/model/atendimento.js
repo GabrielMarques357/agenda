@@ -21,6 +21,7 @@ class User {
                 type: Atendbase.db.Sequelize.INTEGER
             }
         })
+        
     }
    
 }

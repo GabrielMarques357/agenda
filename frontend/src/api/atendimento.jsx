@@ -1,6 +1,6 @@
 import api from "./api"
 
-export const getUsers = async () => {
+export const getAtendimento = async () => {
     const response = await api.get('/api/v1/atendimentos')
 
     if(response.status !== 200){
@@ -10,19 +10,19 @@ export const getUsers = async () => {
     return response.data.users
 }
 
-export const createUser = async (user) => {
+export const createAtendimento = async (user) => {
    const response = await api.post('/api/v1/atendimento', user)
 
    return response
 }
 
-export const updateUser = async (id, user) => {
+export const updateAtendimento = async (id, user) => {
     const response = await api.put(`/api/v1/atendimento/${id}`, user)
 
     return response
 }
 
-export const deleteUser = async (id) => {
+export const deleteAtendimento = async (id) => {
     const response = await api.delete(`/api/v1/atendimento/${id}`)
 
     return response

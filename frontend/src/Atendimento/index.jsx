@@ -3,6 +3,7 @@ import { deleteUser, getUsers } from '../api/clientes'
 import { Link, useNavigate } from 'react-router-dom'
 //import './styles.css'
 import { toast } from 'react-toastify'
+import { getAtendimento } from '../api/atendimento'
 
 function Clientes() {
     const navigate = useNavigate()
@@ -25,7 +26,7 @@ function Clientes() {
 
     useEffect(() => {
         async function carregar() {
-            const allUsers = await getUsers()
+            const allUsers = await getAtendimento()
             setUsers(allUsers)
         }
         carregar()
@@ -50,6 +51,8 @@ function Clientes() {
                             <div className='user' key={user.id}>
                                 <label>{user.dia}</label>
                                 <label>{user.hora}</label>
+                                <label>{user.valor}</label>
+                                <label>{user.concluido}</label>
                                 <div className='actions'>
                                     <button
                                         type='button'

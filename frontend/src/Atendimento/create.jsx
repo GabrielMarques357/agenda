@@ -1,13 +1,13 @@
 import { useState } from "react"
-import { createUser } from "../api/clientes";
+import { createUser } from "../api/atendimento";
 import { useNavigate } from "react-router-dom";
 //import './styles.css'
 
 const INITIAL_STATE = {
-        nome: '',
-        email: '',
-        senha: '',
-        ativo: true
+        dia: '',
+        hora: '',
+        valor: '',
+        concluido: true
 }
 
 export default function CreateCliente() {
@@ -29,7 +29,7 @@ export default function CreateCliente() {
         const response = await createUser(user)
         
         if(response.status === 201) {
-            navigate('/users')
+            navigate('/atendimentos')
         } else {
             console.log(response)
         }
@@ -47,22 +47,22 @@ export default function CreateCliente() {
 
             <div>
                 <label>Dia: </label>
-                <input type="text" name="nome" id='nome' value={user.dia} onChange={handlChange}></input>
+                <input type="text" name="dia" id='nome' value={user.dia} onChange={handlChange}></input>
             </div>
 
             <div>
                 <label>Hora: </label>
-                <input type="email" name="email" id='email' value={user.hora} onChange={handlChange}></input>
+                <input type="email" name="hora" id='email' value={user.hora} onChange={handlChange}></input>
             </div>
 
             <div>
                 <label>Valor: </label>
-                <input type="password" name="senha" id='senha' value={user.valor} onChange={handlChange}></input>
+                <input type="text" name="valor" id='senha' value={user.valor} onChange={handlChange}></input>
             </div>
 
              <div>
                 <label>Concluido: </label>
-                <input type="password" name="senha" id='senha' value={user.concluido} onChange={handlChange}></input>
+                <input type="text" name="concluido" id='senha' value={user.concluido} onChange={handlChange}></input>
             </div>
 
             <button type="reset" onClick={handlReset}>Limpar</button>

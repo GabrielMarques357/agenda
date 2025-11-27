@@ -1,3 +1,4 @@
+import { Sequelize } from "sequelize"
 import database from "../config/database.js"
 
 class User {
@@ -18,6 +19,11 @@ class User {
                 type: database.db.Sequelize.STRING
             }
         })
+
+        //this.model.hasMany('atendimento', {})
+        //Atendimento.belongsTo
+        
+
     }
    
 }
